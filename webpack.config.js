@@ -28,16 +28,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(j|t)jsx$/,
+        test: /\.(j|t)sx$/, //Deve ficar junto com o exclude
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             plugins: [
-              isDevelopment && require.resolve('react-refresh/babel')
-            ].filter(Boolean)
+              isDevelopment && require.resolve('react-refresh/babel'),
+            ].filter(Boolean),
           }
-        }
+        },
       },
       {
         test: /\.scss$/,
